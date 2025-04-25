@@ -1,7 +1,6 @@
 # Ethereum Balance Checker
 
 A simple Motoko canister for checking Ethereum address balances using the EVM RPC canister.
-![Wallet](src/eth_balance/assets/Meta.png)
 
 ## Overview
 
