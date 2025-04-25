@@ -1,14 +1,28 @@
 {
   "canisters": {
-    "eth_balance_backend": {
-      "main": "src/eth_balance_backend/main.mo",
-      "type": "motoko"
+    "eth_balance": {
+      "main": "src/eth_balance/Eth_app.mo",
+      "type": "motoko",
+      "dependencies": [
+        "evm_rpc"
+      ]
+    },
+    "evm_rpc": {
+      "type": "custom",
+      "candid": "https://github.com/dfinity/evm-rpc-canister/releases/latest/download/evm_rpc.did",
+      "wasm": "https://github.com/dfinity/evm-rpc-canister/releases/latest/download/evm_rpc.wasm.gz",
+      "remote": {
+        "id": {
+          "ic": "7hfb6-caaaa-aaaar-qadga-cai"
+        }
+      },
+      "init_arg": "(record {})"
     }
   },
   "defaults": {
     "build": {
       "args": "",
-      "packtool": ""
+      "packtool": "mops sources"
     }
   },
   "output_env_file": ".env",
