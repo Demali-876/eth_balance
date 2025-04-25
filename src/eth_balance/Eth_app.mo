@@ -40,17 +40,17 @@ actor {
 
                 let ethBalance = U.weiToEth(weiBalance);
 
-                return "Balance: " # ethBalance # " ETH (" # Nat.toText(weiBalance) # " Wei)";
+                "Balance: " # ethBalance # " ETH (" # Nat.toText(weiBalance) # " Wei)";
               };
               case (_) {
-                return "Result field is not a string";
+                "Result field is not a string";
               };
             };
           };
         };
       };
       case (#Err(error)) {
-        return "Error: " # debug_show error;
+        "Error: " # debug_show error;
       };
     };
   };
